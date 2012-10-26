@@ -1,0 +1,23 @@
+#!/bin/bash
+# devenv
+# This script sets up the tags file for C, C++, Assembly and Python
+# projects and prints in the screen all pending TODO and FIXME tags
+# in the files
+
+# constants
+WorkingDir=$(pwd)
+
+# 1) create tags file for the working dir and subfolders
+rm -f tags
+rm -f SRC_FILES
+find $WorkingDir -type f \( -name "*.cc" -o -name "*.h" -o -name "*.cpp" -o -name "*.cpp_part" -o -name "*.c" -o -name "*.S" -o -name "*.py" \) > SRC_FILES
+ctags -L SRC_FILES
+echo 1. Tags file created...
+
+# 2) search for TODO and FIXME tags and print them with file name and
+#    line number
+echo 2. Pending hacks...
+grep -nr "TODO\|FIXME" $WorkingDir
+
+# 3) clean everything
+rm SRC_FILES
