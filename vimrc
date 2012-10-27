@@ -2,10 +2,40 @@
 " Guillermo Perez
 " 2012 - 2013
 
+" loading Pathogen to manage my plugins
+" in an ordered fashion
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" Syntax highlight and validation
+syntax on
+filetype on
+filetype plugin indent on
+
+" Pyflakes for checking code
+" and PEP8 for python, all in flake8
+" called on f7
+autocmd BufWritePost *.py call Flake8()
+
+" Gundo plugin mapping
+map <leader>g :GundoToggle<CR>
+
+" Setting the map for the todo
+" and the MakeGreen's as well
+map <leader>td <Plug>TaskList
+map <leader>] <Plug>MakeGreen
+
 " source SuperTab for python
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+
+" NERD Tree
+map <leader>n :NERDTreeToggle<CR>
+
+" Smart grep through ACK plugin
+nmap <leader>a <ESC>:Ack!
 
 " plugins
 filetype plugin on
@@ -46,8 +76,3 @@ autocmd FileType ant setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType css setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 expandtab
-" f7 and f8 to navigate tabs
-map <F7> :tabp<Enter>
-map <F8> :tabn<Enter>
-imap <F7> <Esc>:tabp<Enter>
-imap <F8> <Esc>:tabn<Enter>
