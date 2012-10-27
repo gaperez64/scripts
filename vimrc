@@ -13,6 +13,11 @@ syntax on
 filetype on
 filetype plugin indent on
 
+" easytags, update only on save,
+" load and others
+let g:easytags_always_enabled = 1
+let g:easytags_on_cursorhold = 0
+
 " Pyflakes for checking code
 " and PEP8 for python, all in flake8
 " called on f7
