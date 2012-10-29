@@ -2,6 +2,11 @@
 " Guillermo Perez
 " 2012 - 2013
 
+" Set textwidth to 80 to be terminal/console friendly
+" It also allows to keep typing and vim will auto break your
+" text at the 80th col
+set tw=80
+
 " loading Pathogen to manage my plugins
 " in an ordered fashion
 filetype off
