@@ -12,6 +12,7 @@ call pathogen#helptags()
 syntax on
 filetype on
 filetype plugin indent on
+set hlsearch
 
 " easytags, update only on save,
 " load and others
