@@ -59,6 +59,7 @@ set grepprg=grep\ -nH\ $*
 " all tex files are now tex and not plaintex
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode --shell-escape $*'
 let g:Tex_FoldedSections=''
 let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
