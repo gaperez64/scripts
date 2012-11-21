@@ -82,6 +82,7 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType php setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType htmldjango setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType jsp setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType ant setlocal tabstop=2 shiftwidth=2 expandtab
