@@ -79,6 +79,7 @@ autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
