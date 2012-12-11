@@ -72,6 +72,8 @@ au BufRead * let &numberwidth = float2nr(log10(line("$"))) + 2
           \| let &columns = &numberwidth + 80
 " indent automatically
 set autoindent
+" read ctp files as php files
+au BufNewFile,BufRead *.ctp set filetype=php
 " read cpp_part files as c++ files
 au BufNewFile,BufRead *.cpp_part set filetype=cpp
 " programming language dependant tabs
