@@ -48,6 +48,10 @@ map <leader>n :NERDTreeToggle<CR>
 " Smart grep through ACK plugin
 nmap <leader>a <ESC>:Ack!
 
+" to go through buffers easily let us use f8, f9 for prev and next
+nmap <F8> :bp<CR>
+nmap <F9> :bn<CR>
+
 " plugins
 filetype plugin on
 filetype indent on
