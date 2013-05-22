@@ -70,10 +70,8 @@ let g:Tex_FoldedMisc=''
 
 " standard settings
 syntax on
-" show line numbers and keep the width = 80
+" show line numbers
 set number
-au BufRead * let &numberwidth = float2nr(log10(line("$"))) + 2
-          \| let &columns = &numberwidth + 80
 " indent automatically
 set autoindent
 " read ctp files as php files
