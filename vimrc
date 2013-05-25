@@ -10,7 +10,7 @@ set tw=80
 " loading Pathogen to manage my plugins
 " in an ordered fashion
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 
 " Syntax highlight and validation
