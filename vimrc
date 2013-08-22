@@ -29,13 +29,8 @@ let g:easytags_on_cursorhold = 0
 " called on f7
 autocmd BufWritePost *.py call Flake8()
 
-" Gundo plugin mapping
-map <leader>g :GundoToggle<CR>
-
 " Setting the map for the todo
-" and the MakeGreen's as well
-map <leader>td <Plug>TaskList
-map <leader>] <Plug>MakeGreen
+map <leader>t <Plug>TaskList
 
 " source SuperTab for python
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -44,9 +39,6 @@ set completeopt=menuone,longest,preview
 
 " NERD Tree
 map <leader>n :NERDTreeToggle<CR>
-
-" Smart grep through ACK plugin
-nmap <leader>a <ESC>:Ack!
 
 " to go through buffers easily let us use f8, f9 for prev and next
 nmap <F8> :bp<CR>
@@ -94,4 +86,5 @@ autocmd FileType jsp setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType ant setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType css setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 expandtab
