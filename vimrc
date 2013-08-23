@@ -61,7 +61,6 @@ let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
 
 " standard settings
-syntax on
 " show line numbers
 set number
 " indent automatically
