@@ -9,7 +9,6 @@ set tw=80
 
 " loading Pathogen to manage my plugins
 " in an ordered fashion
-filetype off
 call pathogen#infect("bundle/{}")
 call pathogen#helptags()
 
