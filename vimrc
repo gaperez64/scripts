@@ -1,6 +1,6 @@
 " vim configuration file
 " Guillermo Perez
-" 2012 - 2013
+" 2014
 
 " Set textwidth to 80 to be terminal/console friendly
 " It also allows to keep typing and vim will auto break your
@@ -29,16 +29,10 @@ let g:easytags_on_cursorhold = 0
 " called on f7
 autocmd BufWritePost *.py call Flake8()
 
-" Setting the map for the todo
-map <leader>t <Plug>TaskList
-
 " source SuperTab for python
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-
-" NERD Tree
-map <leader>n :NERDTreeToggle<CR>
 
 " to go through buffers easily let us use f8, f9 for prev and next
 nmap <F8> :bp<CR>
