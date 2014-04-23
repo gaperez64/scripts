@@ -10,7 +10,7 @@ set tw=80
 " loading Pathogen to manage my plugins
 " in an ordered fashion
 filetype off
-call pathogen#incubate()
+call pathogen#infect("bundle/{}")
 call pathogen#helptags()
 
 " Syntax highlight and validation
