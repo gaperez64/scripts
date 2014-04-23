@@ -54,10 +54,6 @@ let g:Tex_FoldedSections=''
 let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
 
-" standard settings
-" licenses
-map :gpl-c :0r ~/.vim/gpl-c.txt
-map :gpl-python :0r ~/.vim/gpl-python.txt
 " show line numbers
 set number
 " indent automatically
