@@ -25,8 +25,10 @@ let g:easytags_on_cursorhold = 0
 
 " Pyflakes for checking code
 " and PEP8 for python, all in flake8
-" called on f7
+" called on f7 (script default) and on save
 autocmd BufWritePost *.py call Flake8()
+" Call gjslint on save for javascript
+autocmd BufWritePost *.js call GSJLinter()
 
 " source SuperTab for python
 au FileType python set omnifunc=pythoncomplete#Complete
