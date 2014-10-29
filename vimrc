@@ -23,10 +23,13 @@ set hlsearch
 let g:easytags_always_enabled = 1
 let g:easytags_on_cursorhold = 0
 
-" Pyflakes for checking code
-" and PEP8 for python, all in flake8
-" called on f7
+" PEP8 for python, all in flake8
+" called on save (default F7 for flake8 is also true)
 autocmd BufWritePost *.py call Flake8()
+
+" google-closure-linter called on save
+" for javascript files
+autocmd BufWritePost *.js call GJSLinter()
 
 " source SuperTab for python
 au FileType python set omnifunc=pythoncomplete#Complete
