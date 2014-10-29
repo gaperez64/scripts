@@ -23,9 +23,17 @@ set hlsearch
 let g:easytags_always_enabled = 1
 let g:easytags_on_cursorhold = 0
 
+<<<<<<< HEAD
 " PEP8 for python, all in flake8
 " called on save (default F7 for flake8 is also true)
+=======
+" Pyflakes for checking code
+" and PEP8 for python, all in flake8
+" called on f7 (script default) and on save
+>>>>>>> 7f37f25e9bea4e44123d506ad28966a97702e942
 autocmd BufWritePost *.py call Flake8()
+" Call gjslint on save for javascript
+autocmd BufWritePost *.js call GSJLinter()
 
 " google-closure-linter called on save
 " for javascript files
