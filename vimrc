@@ -58,6 +58,7 @@ let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode --shell-escape $*'
 let g:Tex_FoldedSections=''
 let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
+let g:Imap_UsePlaceHolders=0
 
 " show line numbers
 set number
