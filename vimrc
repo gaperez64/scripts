@@ -59,6 +59,7 @@ let g:Tex_FoldedSections=''
 let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
 let g:Imap_UsePlaceHolders=0
+let g:Tex_SectionMaps=0
 
 " show line numbers
 set number
