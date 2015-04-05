@@ -72,11 +72,17 @@ au BufNewFile,BufRead *.cpp_part set filetype=cpp
 " read sty files as tex files
 au BufNewFile,BufRead *.sty set filetype=tex
 " programming language dependant tabs
+autocmd FileType lex setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType yacc setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType sh setlocal tabstop=4 shiftwidth=4 expandtab
+" for web programming I economize spaces
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType xslt setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
@@ -85,7 +91,4 @@ autocmd FileType php setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType htmldjango setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType jsp setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType ant setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType css setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType sh setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 expandtab
