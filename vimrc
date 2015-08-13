@@ -42,6 +42,7 @@ set completeopt=menuone,longest,preview
 " to go through buffers easily let us use f8, f9 for prev and next
 nmap <F8> :bp<CR>
 nmap <F9> :bn<CR>
+imap <buffer> <F10> <Plug>Tex_Completion
 
 " plugins
 filetype plugin on
