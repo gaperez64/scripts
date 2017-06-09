@@ -80,6 +80,7 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType tex setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh setlocal tabstop=4 shiftwidth=4 expandtab
