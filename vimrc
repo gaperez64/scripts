@@ -61,6 +61,11 @@ let g:Tex_FoldedEnvironments=''
 let g:Tex_FoldedMisc=''
 let g:Imap_UsePlaceHolders=0
 let g:Tex_SectionMaps=0
+let g:Imap_FreezeImap=1
+
+" remove some annoying latex-suite mappings
+call IUNMAP('((', 'tex')
+call IUNMAP('::', 'text')
 
 " show line numbers
 set number
@@ -79,6 +84,7 @@ autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType haskell setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType tex setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType java setlocal tabstop=2 shiftwidth=2 expandtab
