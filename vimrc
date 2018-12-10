@@ -63,10 +63,6 @@ let g:Imap_UsePlaceHolders=0
 let g:Tex_SectionMaps=0
 let g:Imap_FreezeImap=1
 
-" remove some annoying latex-suite mappings
-call IUNMAP('((', 'tex')
-call IUNMAP('::', 'text')
-
 " show line numbers
 set number
 " indent automatically
