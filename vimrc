@@ -77,6 +77,7 @@ au BufNewFile,BufRead *.sty set filetype=tex
 autocmd FileType lex setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType yacc setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType asm setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
