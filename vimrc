@@ -10,6 +10,8 @@ set tw=80
 set number
 " indent automatically
 set autoindent
+" highlight all search pattern matches
+set hlsearch
 " to go through buffers easily let us use f8, f9 for prev and next
 nmap <F8> :bp<CR>
 nmap <F9> :bn<CR>
