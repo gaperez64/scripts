@@ -1,74 +1,36 @@
 " vim configuration file
-" Guillermo Perez
-" 2014
+" Guillermo A. Perez - 2019
 
+" === Personal preferences and shortcuts ===
 " Set textwidth to 80 to be terminal/console friendly
 " It also allows to keep typing and vim will auto break your
 " text at the 80th col
 set tw=80
-
-" loading Pathogen to manage my plugins
-" in an ordered fashion
-call pathogen#infect("bundle/{}")
-call pathogen#helptags()
-
-" Syntax highlight and validation
-syntax on
-filetype on
-filetype plugin indent on
-set hlsearch
-
-" easytags, update only on save,
-" load and others
-let g:easytags_always_enabled = 1
-let g:easytags_on_cursorhold = 0
-
-" Pyflakes for checking code
-" and PEP8 for python, all in flake8
-" called on f7 (script default) and on save
-autocmd BufWritePost *.py call Flake8()
-" Call gjslint on save for javascript
-autocmd BufWritePost *.js call GSJLinter()
-
-" google-closure-linter called on save
-" for javascript files
-autocmd BufWritePost *.js call GJSLinter()
-
-" source SuperTab for python
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
-
-" to go through buffers easily let us use f8, f9 for prev and next
-nmap <F8> :bp<CR>
-nmap <F9> :bn<CR>
-imap <buffer> <F10> <Plug>Tex_Completion
-
-" plugins
-filetype plugin on
-filetype indent on
-
-" grep will sometimes skip displaying the file name if you
-" search in a single file. This confuses Latex-Suite. This
-" sets grep to always generate a file name
-set grepprg=grep\ -nH\ $*
-" all tex files are now tex and not plaintex
-let g:tex_flavor='latex'
-" other latex suite fixes
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode --shell-escape $*'
-let g:Tex_FoldedSections=''
-let g:Tex_FoldedEnvironments=''
-let g:Tex_FoldedMisc=''
-let g:Imap_UsePlaceHolders=0
-let g:Tex_SectionMaps=0
-let g:Imap_FreezeImap=1
-let g:Tex_SmartKeyQuote=0
-
 " show line numbers
 set number
 " indent automatically
 set autoindent
+" to go through buffers easily let us use f8, f9 for prev and next
+nmap <F8> :bp<CR>
+nmap <F9> :bn<CR>
+
+" === External package management (via vim-plug) ===
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'rhysd/vim-llvm'
+Plug 'nvie/vim-flake8'
+call plug#end()
+
+" === Good coding practices/checks ===
+" Python flake8 called on f7 (script default) and on save
+autocmd BufWritePost *.py call Flake8()
+
+" === Filetype stuff ===
 " read ctp files as php files
 au BufNewFile,BufRead *.ctp set filetype=php
 " read cpp_part files as c++ files
