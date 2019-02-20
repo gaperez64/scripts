@@ -54,6 +54,7 @@ filetype indent on
 set grepprg=grep\ -nH\ $*
 " all tex files are now tex and not plaintex
 let g:tex_flavor='latex'
+" other latex suite fixes
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode --shell-escape $*'
 let g:Tex_FoldedSections=''
@@ -62,6 +63,7 @@ let g:Tex_FoldedMisc=''
 let g:Imap_UsePlaceHolders=0
 let g:Tex_SectionMaps=0
 let g:Imap_FreezeImap=1
+let g:Tex_SmartKeyQuote=0
 
 " show line numbers
 set number
@@ -78,6 +80,7 @@ autocmd FileType lex setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType yacc setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType ll setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
