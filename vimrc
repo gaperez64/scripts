@@ -28,6 +28,9 @@ Plug 'rhysd/vim-llvm'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
+" vimtex is annoying with quotation marks:
+let g:vimtex_imaps_leader = ';'
+
 " === Good coding practices/checks ===
 " Python flake8 called on f7 (script default) and on save
 autocmd BufWritePost *.py call Flake8()
