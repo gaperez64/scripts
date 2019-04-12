@@ -5,7 +5,7 @@
 " Set textwidth to 80 to be terminal/console friendly
 " It also allows to keep typing and vim will auto break your
 " text at the 80th col
-set tw=80
+set tw=78
 " show line numbers
 set number
 " indent automatically
