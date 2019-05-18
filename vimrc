@@ -2,7 +2,7 @@
 " Guillermo A. Perez - 2019
 
 " === Personal preferences and shortcuts ===
-" Set textwidth to 80 to be terminal/console friendly
+" Set textwidth to 78 to be terminal/console friendly
 " It also allows to keep typing and vim will auto break your
 " text at the 80th col
 set tw=78
