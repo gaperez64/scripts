@@ -51,6 +51,7 @@ autocmd FileType ll setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType ml setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType haskell setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
