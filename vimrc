@@ -51,7 +51,6 @@ autocmd FileType ll setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType ml setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType haskell setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType bib setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType scala setlocal tabstop=4 shiftwidth=4 expandtab
@@ -59,6 +58,7 @@ autocmd FileType sh setlocal tabstop=4 shiftwidth=4 expandtab
 " for these I economize spaces
 autocmd FileType tex setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType java setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2 expandtab
 " for web programming I also economize spaces
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType xslt setlocal tabstop=2 shiftwidth=2 expandtab
