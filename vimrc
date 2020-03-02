@@ -1,5 +1,5 @@
 " vim configuration file
-" Guillermo A. Perez - 2019
+" Guillermo A. Perez - 2020
 
 " === Personal preferences and shortcuts ===
 " Set textwidth to 78 to be terminal/console friendly
@@ -12,6 +12,9 @@ set number
 set autoindent
 " highlight all search pattern matches
 set hlsearch
+" remove scrolloff so that the cursor moves while the current
+" text stays onscreen
+set scrolloff=0
 " to go through buffers easily let us use f8, f9 for prev and next
 nmap <F8> :bp<CR>
 nmap <F9> :bn<CR>

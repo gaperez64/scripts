@@ -1,4 +1,3 @@
-scripts
-=======
+# Scripts
 
-Personal scripts, dev tools and stuff
+Personal scripts, dev tools, and stuff
