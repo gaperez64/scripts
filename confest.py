@@ -37,7 +37,7 @@ def process(fname):
     print(f"Total amount received: {total}eur")
 
     # Fetching information about who attends what
-    print("# Attendance numbers")
+    print("# Attendance numbers (recall +8 guests)")
     recep = frame[(frame["Student_reception"] == "yes") |
                   (frame["Regular_reception"] == "yes")]
     print(f"No. of participants going to reception: {recep.shape[0]}")
