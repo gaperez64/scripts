@@ -38,6 +38,7 @@ def process(fname):
 
     # Fetching information about who attends what
     print("# Attendance numbers (recall +8 guests)")
+    print("# (and Christian reg'd for workshop, not FORMATS last day)")
     recep = frame[(frame["Student_reception"] == "yes") |
                   (frame["Regular_reception"] == "yes")]
     print(f"No. of participants going to reception: {recep.shape[0]}")
