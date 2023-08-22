@@ -12,8 +12,11 @@ def process(fname):
 
     # Hardcoding amounts and status of me, students, Benny
     # and people who have been sent an invoice
+    # and invited speakers who attend for free
     us = frame["ID"].isin([3, 4, 6, 8, 15, 45,
-                           141, 65, 108, 137, 37])
+                           141, 65, 108, 137, 37,
+                           115,
+                           ])
     frame.MultiSafePayStatus[us] = "completed"
     students = frame["ID"].isin([4, 6, 8, 15])
     frame.Bedrag[students] = 580
@@ -38,7 +41,6 @@ def process(fname):
 
     # Fetching information about who attends what
     print("# Attendance numbers (recall +8 guests)")
-    print("# (and Christian reg'd for workshop, not FORMATS last day)")
     recep = frame[(frame["Student_reception"] == "yes") |
                   (frame["Regular_reception"] == "yes")]
     print(f"No. of participants going to reception: {recep.shape[0]}")
