@@ -1,21 +1,54 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{tikz}
-\usepackage[left=5.2cm,top=2cm,right=1.5cm,bottom=2cm,verbose,nohead,nofoot]{geometry}
+\usepackage[left=1cm,right=1cm,top=1cm,nohead,nofoot]{geometry}
+\usepackage{graphicx}
 \usepackage{etoolbox}
 
-\begin{document}
-  \thispagestyle{empty}
-  \begin{tikzpicture}[remember picture,overlay]
-      \node (back names) [shape=rectangle, fill=blue, minimum height=40mm, minimum width=\paperwidth, anchor=south west] at (current page.south west) {};
-      \node at (back names.center) {
-        \begin{tabular}{r l}
-          A & B
-        \end{tabular}
-      };
-      \node (names) [shape=rectangle, fill=red, minimum width=\paperwidth, anchor=west] at ([yshift=8cm]current page.south west) {
-        \begin{tabular}{r l}
-          one & two
-        \end{tabular}
-      };
+\usetikzlibrary{positioning}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+
+\newcommand{\tagpage}[5]{%
+  % This is one page
+  % Note: badges are 7cm x 4.23xm
+  \begin{tikzpicture}[every node/.style={shape=rectangle, minimum width=70mm, minimum
+    height=42.3mm, align=left, draw=black, dotted}]
+    \node[minimum height=0mm,draw=none] (l0) {};
+    \foreach \nl\il\al\nr\ir\ar [count=\j from 1] in {#1, #2, #3, #4, #5}{
+      \pgfmathtruncatemacro{\prev}{(\j - 1)};
+      % This is one row
+      \node[below=2pt of l\prev] (l\j) {%
+              {\Large \nl}\\
+              \il\\
+              \vspace{2pt}\\
+              \al\\
+              \vspace{2pt}\\
+              \includegraphics[width=3cm]{uamother}
+            };
+       \node[right=of l\j] (r\j) {%
+              {\Large \nr}\\
+              \ir\\
+              \vspace{2pt}\\
+              \ar\\
+              \vspace{2pt}\\
+              \includegraphics[width=3cm]{uamother}
+            };
+    }
   \end{tikzpicture}
+  \clearpage
+}
+
+\begin{document}
+  \tagpage{{Guillermo Perez}/Antwer/{BRCS A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+  \tagpage{{Guillermo Perez}/Antwer/{BRCS A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+          {Carlos/RijksOverheid/{B R C A}/Kim/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Alex/RijksOverheid/{B R C A}}%
+          {Kim/RijksOverheid/{B R C A}/Leo/RijksOverheid/{B R C A}}%
 \end{document}
