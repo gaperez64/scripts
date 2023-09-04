@@ -1,0 +1,21 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{tikz}
+\usepackage[left=5.2cm,top=2cm,right=1.5cm,bottom=2cm,verbose,nohead,nofoot]{geometry}
+\usepackage{etoolbox}
+
+\begin{document}
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture,overlay]
+      \node (back names) [shape=rectangle, fill=blue, minimum height=40mm, minimum width=\paperwidth, anchor=south west] at (current page.south west) {};
+      \node at (back names.center) {
+        \begin{tabular}{r l}
+          A & B
+        \end{tabular}
+      };
+      \node (names) [shape=rectangle, fill=red, minimum width=\paperwidth, anchor=west] at ([yshift=8cm]current page.south west) {
+        \begin{tabular}{r l}
+          one & two
+        \end{tabular}
+      };
+  \end{tikzpicture}
+\end{document}
