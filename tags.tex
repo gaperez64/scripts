@@ -1,6 +1,6 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper]{article}
 \usepackage{tikz}
-\usepackage[left=1cm,right=1cm,top=1cm,nohead,nofoot]{geometry}
+\usepackage[left=-1.5em,top=-0.7em,nohead,nofoot]{geometry}
 \usepackage{graphicx}
 \usepackage{etoolbox}
 
@@ -10,16 +10,16 @@
 
 \pagestyle{empty}
 
-\newcommand{\tagpage}[5]{%
+\newcommand{\tagpage}[7]{%
   % This is one page
-  % Note: badges are 7cm x 4.23xm
+  % Note: 21 badges, 3 columns, each 7cm x 4.23cm
   \begin{tikzpicture}[every node/.style={shape=rectangle, minimum width=70mm, minimum
     height=42.3mm, text width=65mm, align=left, draw=black, dotted}]
-    \node[minimum height=0mm,draw=none] (l0) {};
-    \foreach \nl\il\al\nr\ir\ar [count=\j from 1] in {#1, #2, #3, #4, #5}{
+    \node[minimum height=0mm,draw=none] at (current page.north west) (l0) {};
+    \foreach \nl\il\al\nc\ic\ac\nr\ir\ar [count=\j from 1] in {#1,#2,#3,#4,#5,#6,#7}{
       \pgfmathtruncatemacro{\prev}{(\j - 1)};
       % This is one row
-      \node[below=2pt of l\prev] (l\j) {%
+      \node[below=0pt of l\prev] (l\j) {%
               {\Large \nl}
 
               \il
@@ -30,7 +30,18 @@
 
               \includegraphics[width=3cm]{uamother}
             };
-       \node[right=of l\j] (r\j) {%
+       \node[right=0pt of l\j] (c\j) {%
+              {\Large \nc}
+
+              \ic
+
+              ~\\
+
+              \ac
+
+              \includegraphics[width=3cm]{uamother}
+            };
+       \node[right=0pt of c\j] (r\j) {%
               {\Large \nr}
 
               \ir
@@ -43,7 +54,7 @@
             };
     }
   \end{tikzpicture}
-  \clearpage
+  \newpage
 }
 
 \begin{document}

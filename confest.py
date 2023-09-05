@@ -72,33 +72,39 @@ def process(fname):
     f = open("parts.tex", "w")
     i = 0
     for _, row in frame.iterrows():
-        if i % 10 == 0:
+        if i % 21 == 0:
             f.write("\\tagpage")
-        if i % 2 == 0:
+        if i % 3 == 0:
             (name1, affil1) = (row["Fullname"],
                                row["Affiliation"].replace("&", "\\&"))
             regd1 = regdfor(row)
-        else:
+        elif i % 3 == 1:
             (name2, affil2) = (row["Fullname"],
                                row["Affiliation"].replace("&", "\\&"))
             regd2 = regdfor(row)
+        else:
+            (name3, affil3) = (row["Fullname"],
+                               row["Affiliation"].replace("&", "\\&"))
+            regd3 = regdfor(row)
             f.write("{"
                     f"{{{name1}}}/{{{affil1}}}/{{{regd1}}}/"
-                    f"{{{name2}}}/{{{affil2}}}/{{{regd2}}}"
+                    f"{{{name2}}}/{{{affil2}}}/{{{regd2}}}/"
+                    f"{{{name3}}}/{{{affil3}}}/{{{regd3}}}"
                     "}%\n")
         i += 1
-    print(f"Value of i before mod = {i}, {i % 10}")
-    if i % 10 != 0:
-        while i % 10 != 0:
-            if i % 2 == 0:
-                (name1, affil1) = ("", "")
-                regd1 = ""
+
+    if i % 21 != 0:
+        while i % 21 != 0:
+            if i % 3 == 0:
+                (name1, affil1, regd1) = ("", "", "")
+            elif i % 3 == 1:
+                (name2, affil2, regd2) = ("", "", "")
             else:
-                (name2, affil2) = ("", "")
-                regd2 = ""
+                (name3, affil3, regd3) = ("", "", "")
                 f.write("{"
                         f"{{{name1}}}/{{{affil1}}}/{{{regd1}}}/"
-                        f"{{{name2}}}/{{{affil2}}}/{{{regd2}}}"
+                        f"{{{name2}}}/{{{affil2}}}/{{{regd2}}}/"
+                        f"{{{name3}}}/{{{affil3}}}/{{{regd3}}}"
                         "}%\n")
             i += 1
     f.close
