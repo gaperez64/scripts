@@ -41,9 +41,11 @@ def process(fname):
     # Hardcoding amounts and status of me, students, Benny
     # and people who have been sent an invoice
     # and invited speakers who attend for free
+    # and people who promised to pay by transf?
     us = frame["ID"].isin([3, 4, 6, 8, 15, 45,
                            141, 65, 108, 137, 37,
                            115,
+                           206,
                            ])
     frame.MultiSafePayStatus[us] = "completed"
     students = frame["ID"].isin([4, 6, 8, 15])
@@ -115,7 +117,8 @@ def process(fname):
                                       row["Diet"] != "Diet_other"
                                       else row["Diet_other"],
                                       axis=1)
-    food = frame[["Fullname", "Diet restr"]]
+    food = frame[frame["Diet"] != "none"]
+    food = food[["Fullname", "Diet restr"]]
     food.to_csv("diet.csv")
 
     # Information about money
