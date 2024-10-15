@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usepackage[left=-1.5em,top=-0.7em,nohead,nofoot]{geometry}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\usetikzlibrary{positioning}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+
+\newcommand{\tagpage}[7]{%
+  % This is one page
+  % Note: 21 badges, 3 columns, each 7cm x 4.23cm
+  \begin{tikzpicture}[every node/.style={shape=rectangle, minimum width=70mm, minimum
+    height=42.3mm, text width=65mm, align=left, draw=black, dotted}]
+    \node[minimum height=0mm,draw=none] at (current page.north west) (l0) {};
+    \foreach \nl\il\al\nc\ic\ac\nr\ir\ar [count=\j from 1] in {#1,#2,#3,#4,#5,#6,#7}{
+      \pgfmathtruncatemacro{\prev}{(\j - 1)};
+      % This is one row
+      \node[below=0pt of l\prev] (l\j) {%
+              {\Large \nl}
+
+              \il
+              
+              ~\\
+
+              \al
+
+              \includegraphics[width=3cm]{uamother}
+            };
+       \node[right=0pt of l\j] (c\j) {%
+              {\Large \nc}
+
+              \ic
+
+              ~\\
+
+              \ac
+
+              \includegraphics[width=3cm]{uamother}
+            };
+       \node[right=0pt of c\j] (r\j) {%
+              {\Large \nr}
+
+              \ir
+
+              ~\\
+
+              \ar
+
+              \includegraphics[width=3cm]{uamother}
+            };
+    }
+  \end{tikzpicture}
+  \newpage
+}
+
+\begin{document}
+  \input{parts}
+\end{document}
