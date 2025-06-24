@@ -45,6 +45,7 @@ au BufNewFile,BufRead *.cpp_part set filetype=cpp
 " read sty files as tex files
 au BufNewFile,BufRead *.sty set filetype=tex
 " programming language dependant tabs
+autocmd FileType jl setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType lex setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType yacc setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
