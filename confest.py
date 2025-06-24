@@ -42,7 +42,7 @@ def process(fname):
     # and people who have been sent an invoice
     # and invited speakers who attend for free
     # and people who promised to pay by transf?
-    us = frame["ID"].isin([3, 4, 6, 8, 15, 45,
+    us = frame["ID"].isin([3, 4, 6, 8, 15, 45, 214,
                            141, 65, 108, 137, 37,
                            115,
                            206,
@@ -73,6 +73,7 @@ def process(fname):
     # Dumping to file the information for tags
     f = open("parts.tex", "w")
     i = 0
+    frame = frame.sort_values(by=["Firstname"])
     for _, row in frame.iterrows():
         if i % 21 == 0:
             f.write("\\tagpage")

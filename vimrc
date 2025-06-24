@@ -27,7 +27,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
-Plug 'rhysd/vim-llvm'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
