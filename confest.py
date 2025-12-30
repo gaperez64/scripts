@@ -41,9 +41,11 @@ def process(fname):
     # Hardcoding amounts and status of me, students, Benny
     # and people who have been sent an invoice
     # and invited speakers who attend for free
-    us = frame["ID"].isin([3, 4, 6, 8, 15, 45,
+    # and people who promised to pay by transf?
+    us = frame["ID"].isin([3, 4, 6, 8, 15, 45, 214,
                            141, 65, 108, 137, 37,
                            115,
+                           206,
                            ])
     frame.MultiSafePayStatus[us] = "completed"
     students = frame["ID"].isin([4, 6, 8, 15])
@@ -71,6 +73,7 @@ def process(fname):
     # Dumping to file the information for tags
     f = open("parts.tex", "w")
     i = 0
+    frame = frame.sort_values(by=["Firstname"])
     for _, row in frame.iterrows():
         if i % 21 == 0:
             f.write("\\tagpage")
@@ -115,7 +118,8 @@ def process(fname):
                                       row["Diet"] != "Diet_other"
                                       else row["Diet_other"],
                                       axis=1)
-    food = frame[["Fullname", "Diet restr"]]
+    food = frame[frame["Diet"] != "none"]
+    food = food[["Fullname", "Diet restr"]]
     food.to_csv("diet.csv")
 
     # Information about money
