@@ -1,5 +1,5 @@
 " vim configuration file
-" Guillermo A. Perez - 2020
+" Guillermo A. Perez - 2026
 
 " === Personal preferences and shortcuts ===
 " Set textwidth to 78 to be terminal/console friendly
@@ -30,7 +30,10 @@ Plug 'lervag/vimtex'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
-" vimtex is annoying with quotation marks:
+" === Ctags should be updated on save ===
+autocmd BufWritePost *.c,*.h silent! !ctags . &
+
+" === Vimtex is annoying with quotation marks ===
 let g:vimtex_imaps_leader = ';'
 
 " === Good coding practices/checks ===
