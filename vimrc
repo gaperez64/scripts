@@ -30,8 +30,8 @@ Plug 'lervag/vimtex'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
-" === Ctags should be updated on save ===
-autocmd BufWritePost *.c,*.h silent! !ctags . &
+" === Ctags should be updated on save for C/C++ ===
+autocmd BufWritePost *.c,*.cc,*.cpp,*.h,*.hh,*.hpp silent! !ctags . &
 
 " === Vimtex is annoying with quotation marks ===
 let g:vimtex_imaps_leader = ';'
